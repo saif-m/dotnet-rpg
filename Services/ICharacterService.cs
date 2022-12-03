@@ -1,11 +1,13 @@
+using dotnet_rpg.Dtos.Characters;
+
 namespace dotnet_rpg.Services
 {
     public interface ICharacterService
     {
-        Task<List<Character>> AddCharacter(Character newCharacter);
+        Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter);
         
-         Task<List<Character>> GetAllCharacters();
+         Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters();
 
-         Task<Character> GetCharacterById(int id);
+         Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id);
     }
 }

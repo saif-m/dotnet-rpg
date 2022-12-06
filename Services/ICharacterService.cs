@@ -9,5 +9,7 @@ namespace dotnet_rpg.Services
          Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters();
 
          Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id);
+
+         Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updateedCharacter);
     }
 }

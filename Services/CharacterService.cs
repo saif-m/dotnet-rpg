@@ -61,12 +61,15 @@ namespace dotnet_rpg.Services
             ServiceResponse<GetCharacterDto> serviceResponse = new ServiceResponse<GetCharacterDto>();
             try {
                 Character character = characters.First(c => c.Id == updateedCharacter.Id);
-                character.Name = updateedCharacter.Name;
-                character.HitPoints = updateedCharacter.HitPoints;
-                character.Strength = updateedCharacter.Strength;
-                character.Defence = updateedCharacter.Defence;
-                character.Intelligance = updateedCharacter.Intelligance;
-                character.Class = updateedCharacter.Class;
+
+                _mapper.Map(updateedCharacter, character);
+
+                // character.Name = updateedCharacter.Name;
+                // character.HitPoints = updateedCharacter.HitPoints;
+                // character.Strength = updateedCharacter.Strength;
+                // character.Defence = updateedCharacter.Defence;
+                // character.Intelligance = updateedCharacter.Intelligance;
+                // character.Class = updateedCharacter.Class;
                 serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             } catch(Exception ex) {
                 serviceResponse.Success = false;

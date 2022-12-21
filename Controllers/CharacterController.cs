@@ -1,9 +1,11 @@
 using dotnet_rpg.Dtos.Characters;
 using dotnet_rpg.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_rpg.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
 

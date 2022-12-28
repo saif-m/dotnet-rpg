@@ -1,6 +1,6 @@
 using dotnet_rpg.Dtos.Characters;
 
-namespace dotnet_rpg.Services
+namespace dotnet_rpg.Services.CharacterService
 {
     public interface ICharacterService
     {

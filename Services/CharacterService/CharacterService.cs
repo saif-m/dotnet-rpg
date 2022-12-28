@@ -4,7 +4,7 @@ using dotnet_rpg.Dtos.Characters;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
-namespace dotnet_rpg.Services
+namespace dotnet_rpg.Services.CharacterService
 {
     public class CharacterService : ICharacterService
     {

@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using dotnet_rpg.Dtos.Characters;
-using dotnet_rpg.Services;
+using dotnet_rpg.Services.CharacterService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

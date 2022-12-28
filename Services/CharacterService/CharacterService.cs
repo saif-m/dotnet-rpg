@@ -66,6 +66,7 @@ namespace dotnet_rpg.Services.CharacterService
         {
             var response = new ServiceResponse<List<GetCharacterDto>>();
             var dbCharacters = await _context.Characters
+            .Include(c => c.Weapon)
             .Where(c => c.User.Id == GetUserId())
             .ToListAsync();
             response.Data = dbCharacters.Select(c=> _mapper.Map<GetCharacterDto>(c)).ToList();

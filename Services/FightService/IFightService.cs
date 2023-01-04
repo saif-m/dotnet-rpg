@@ -5,5 +5,7 @@ namespace dotnet_rpg.Services.FightService
     public interface IFightService
     {
         Task<ServiceResponse<AttackResaultDto>> WeaponAttack(WeaponAttackDto request);
+
+        Task<ServiceResponse<AttackResaultDto>> SkillAttack(SkillAttackDto request);
     }
 }

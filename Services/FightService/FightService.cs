@@ -17,6 +17,11 @@ namespace dotnet_rpg.Services.FightService
             _context = context;
         }
 
+        public Task<ServiceResponse<FightResaultDto>> Fight(FightRequestDto request)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ServiceResponse<AttackResaultDto>> SkillAttack(SkillAttackDto request) {
             var response = new ServiceResponse<AttackResaultDto>();
             try {

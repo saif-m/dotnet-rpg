@@ -24,15 +24,15 @@ namespace dotnetrpg.Migrations
 
             modelBuilder.Entity("CharacterSkill", b =>
                 {
+                    b.Property<int>("SkillsId")
+                        .HasColumnType("int");
+
                     b.Property<int>("charactersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("skillsId")
-                        .HasColumnType("int");
+                    b.HasKey("SkillsId", "charactersId");
 
-                    b.HasKey("charactersId", "skillsId");
-
-                    b.HasIndex("skillsId");
+                    b.HasIndex("charactersId");
 
                     b.ToTable("CharacterSkill");
                 });
@@ -48,7 +48,13 @@ namespace dotnetrpg.Migrations
                     b.Property<int>("Class")
                         .HasColumnType("int");
 
+                    b.Property<int>("Defeats")
+                        .HasColumnType("int");
+
                     b.Property<int>("Defence")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Fights")
                         .HasColumnType("int");
 
                     b.Property<int>("HitPoints")
@@ -65,6 +71,9 @@ namespace dotnetrpg.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Vectories")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -167,15 +176,15 @@ namespace dotnetrpg.Migrations
 
             modelBuilder.Entity("CharacterSkill", b =>
                 {
-                    b.HasOne("dotnet_rpg.Models.Character", null)
+                    b.HasOne("dotnet_rpg.Models.Skill", null)
                         .WithMany()
-                        .HasForeignKey("charactersId")
+                        .HasForeignKey("SkillsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("dotnet_rpg.Models.Skill", null)
+                    b.HasOne("dotnet_rpg.Models.Character", null)
                         .WithMany()
-                        .HasForeignKey("skillsId")
+                        .HasForeignKey("charactersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
